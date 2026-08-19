@@ -65,7 +65,7 @@ def script_from_preset(preset: AppPreset, app: AppInfo) -> TikTokScript:
     return TikTokScript(
         hook=ScriptBeat(
             kind="hook",
-            on_screen=preset.hook,
+            on_screen="Still guessing your work hours?",
             voiceover=preset.hook,
             runway_prompt=(
                 "Cinematic vertical Windows desk scene, person frustrated at laptop, "
@@ -74,7 +74,7 @@ def script_from_preset(preset: AppPreset, app: AppInfo) -> TikTokScript:
         ),
         problem=ScriptBeat(
             kind="problem",
-            on_screen=preset.problem[:90],
+            on_screen="No accounts. No ads. Just track.",
             voiceover=preset.problem,
             runway_prompt=(
                 "Slow zoom on a Windows laptop screen with blurred productivity UI, "
@@ -83,7 +83,7 @@ def script_from_preset(preset: AppPreset, app: AppInfo) -> TikTokScript:
         ),
         solution=ScriptBeat(
             kind="solution",
-            on_screen=f"{app.name} makes it simple",
+            on_screen="One click. Notes. Reports.",
             voiceover=preset.tagline,
             runway_prompt=(
                 "Smooth parallax over a clean Windows app screenshot, gentle camera drift, "
@@ -101,7 +101,7 @@ def script_from_preset(preset: AppPreset, app: AppInfo) -> TikTokScript:
         ),
         cta=ScriptBeat(
             kind="cta",
-            on_screen=f"Get {app.name} on Microsoft Store",
+            on_screen="Work Time Tracker Pro",
             voiceover=f"Search {app.name} on the Microsoft Store for Windows.",
             runway_prompt=(
                 "Celebratory end card, Windows laptop with app icon glow, "

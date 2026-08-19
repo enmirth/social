@@ -52,6 +52,14 @@ python3 make_tiktok.py \
 
 Copy screenshots from your Microsoft Store listing or from https://enmirth.com/software into each folder, then remove `--dry-run` to generate the Runway video.
 
+Preview the format without Runway credits:
+
+```bash
+python3 make_sample.py --preset work-time-tracker-pro --output-dir ./out/sample
+```
+
+This builds a ~18s vertical video from your Microsoft Store screenshots with captions. Use Runway later for cinematic hook/CTA clips and smoother motion.
+
 ## Quick start
 
 ```bash
