@@ -15,6 +15,7 @@ from lib.runway_client import (
     generate_text_to_video,
     get_api_key,
 )
+from lib.presets import app_info_from_preset, get_preset, script_from_preset
 from lib.script import TikTokScript, build_script, save_script
 from lib.store import fetch_app_info, save_app_info
 
@@ -69,7 +70,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description="Create a simple TikTok video from a store URL and screenshots using Runway."
     )
-    parser.add_argument("--store-url", required=True, help="App Store or Google Play URL")
+    parser.add_argument(
+        "--store-url",
+        help="App Store, Google Play, or Microsoft Store URL",
+    )
+    parser.add_argument(
+        "--preset",
+        choices=["work-time-tracker-pro", "draft-pal"],
+        help="Use a built-in preset for Enmirth Microsoft Store apps",
+    )
     parser.add_argument(
         "--screenshots",
         required=True,
@@ -107,14 +116,25 @@ def main() -> int:
     parser.add_argument("--tagline", help="Override the solution/benefit beat")
     args = parser.parse_args()
 
+    if not args.store_url and not args.preset:
+        parser.error("Provide --store-url or --preset.")
+
     output_dir = Path(args.output_dir).resolve()
     screenshots_dir = Path(args.screenshots).resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    app = fetch_app_info(args.store_url)
+    if args.preset:
+        preset = get_preset(args.preset)
+        store_url = args.store_url or preset.store_url
+        app = app_info_from_preset(preset)
+        app.store_url = store_url
+        script = script_from_preset(preset, app)
+    else:
+        app = fetch_app_info(args.store_url)
+        script = build_script(app)
+
     if args.app_name:
         app.name = args.app_name.strip()
-    script = build_script(app)
     if args.problem:
         script.problem.on_screen = args.problem[:90]
         script.problem.voiceover = args.problem
@@ -173,7 +193,7 @@ def main() -> int:
         script.solution.on_screen,
         f"Download {app.name} on the {app.store}.",
         app.store_url,
-        f"#{app.category.replace(' ', '')} #app #productivity #newapp",
+        f"#{app.category.replace(' ', '')} #Windows #productivity #MicrosoftStore",
     ]
     (output_dir / "tiktok_caption.txt").write_text("\n\n".join(caption_lines), encoding="utf-8")
 

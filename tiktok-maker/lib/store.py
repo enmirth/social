@@ -80,6 +80,34 @@ def _fetch_app_store(store_url: str, app_id: str) -> AppInfo:
     )
 
 
+def _fetch_microsoft_store(store_url: str, product_id: str) -> AppInfo:
+    response = requests.get(
+        f"https://displaycatalog.mp.microsoft.com/v7.0/products/{product_id}",
+        params={"market": "US", "languages": "en-US", "moId": "Public"},
+        headers={"User-Agent": "Mozilla/5.0"},
+        timeout=20,
+    )
+    response.raise_for_status()
+    payload = response.json()
+    product = payload.get("Product") or {}
+    localized = (product.get("LocalizedProperties") or [{}])[0]
+
+    description = _clean_text(
+        localized.get("ProductDescription")
+        or localized.get("ShortDescription")
+        or ""
+    )
+    category = localized.get("ProductCategoryId") or "Productivity"
+
+    return AppInfo(
+        name=localized.get("ProductTitle") or "Your app",
+        description=description,
+        category=str(category).replace("_", " ").title(),
+        store="Microsoft Store",
+        store_url=store_url,
+    )
+
+
 def _fetch_play_store(store_url: str, package_id: str) -> AppInfo:
     response = requests.get(
         store_url,
@@ -123,7 +151,15 @@ def fetch_app_info(store_url: str) -> AppInfo:
             raise ValueError("Could not parse Play Store package id from URL.")
         return _fetch_play_store(store_url, package_id)
 
-    raise ValueError("Unsupported store URL. Use an App Store or Google Play link.")
+    if "apps.microsoft.com" in host:
+        match = re.search(r"/detail/([A-Za-z0-9]+)", parsed.path, re.IGNORECASE)
+        if not match:
+            raise ValueError("Could not parse Microsoft Store product id from URL.")
+        return _fetch_microsoft_store(store_url, match.group(1))
+
+    raise ValueError(
+        "Unsupported store URL. Use App Store, Google Play, or Microsoft Store link."
+    )
 
 
 def save_app_info(app: AppInfo, path: str) -> None:

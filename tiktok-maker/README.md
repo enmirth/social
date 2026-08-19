@@ -25,6 +25,33 @@ export RUNWAYML_API_SECRET="your_key_from_dev.runwayml.com"
 
 You also need `ffmpeg` installed locally.
 
+## Enmirth apps (Microsoft Store)
+
+Built-in presets for your two shipping apps:
+
+| Preset | App | Store link |
+| --- | --- | --- |
+| `work-time-tracker-pro` | Work Time Tracker Pro | https://apps.microsoft.com/detail/9nf1pz1mf2fk |
+| `draft-pal` | Draft Pal | https://apps.microsoft.com/detail/9MSSMR2XSLTW |
+
+```bash
+# Work Time Tracker Pro
+python3 make_tiktok.py \
+  --preset work-time-tracker-pro \
+  --screenshots ./screenshots/work-time-tracker-pro \
+  --output-dir ./out/work-time-tracker-pro \
+  --dry-run
+
+# Draft Pal
+python3 make_tiktok.py \
+  --preset draft-pal \
+  --screenshots ./screenshots/draft-pal \
+  --output-dir ./out/draft-pal \
+  --dry-run
+```
+
+Copy screenshots from your Microsoft Store listing or from https://enmirth.com/software into each folder, then remove `--dry-run` to generate the Runway video.
+
 ## Quick start
 
 ```bash
