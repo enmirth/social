@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <rect x="20" y="40" width="1160" height="520" rx="260" fill="#FFFFFF"/>
+  <rect x="52" y="72" width="1096" height="456" rx="228" fill="#0A1220"/>
+  <rect x="76" y="96" width="1048" height="408" rx="204" fill="none" stroke="#60A5FA" stroke-width="8"/>
+  <text x="600" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" fill="#60A5FA" letter-spacing="8">CALM PIPELINE</text>
+  <text x="600" y="345" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="76" font-weight="800" fill="#FFFFFF">SAVED &#8594; APPLIED &#8594; OFFER</text>
+  <text x="600" y="435" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="600" fill="#9AADC4">powered by appliedly</text>
+</svg>

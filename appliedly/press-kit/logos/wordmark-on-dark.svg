@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252.31 94.53" role="img" aria-label="Appliedly">
+  <title>Appliedly — Open Aperture</title>
+  <rect width="252.31" height="94.53" fill="#0A1220"/>
+  <text x="22.00" y="62.22"
+        font-family="Sora, Manrope, Segoe UI, sans-serif"
+        font-weight="600" font-size="44" letter-spacing="-0.03em"
+        fill="#E8EEF8">Appliedly</text>
+  <rect x="31.62" y="37.81" width="13.06" height="2.41" fill="#0A1220"/>
+  <rect x="33.06" y="37.81"
+        width="10.19" height="2.41"
+        rx="1.20" fill="#60A5FA"/>
+  <rect x="164.48" y="52.52"
+        width="1.03" height="2.58"
+        rx="1.29" fill="#60A5FA"/>
+</svg>

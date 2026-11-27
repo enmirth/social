@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <!-- Die-cut hexagon shield -->
+  <polygon points="600,45 1095,315 1095,885 600,1155 105,885 105,315" fill="#FFFFFF"/>
+  <polygon points="600,90 1055,340 1055,860 600,1110 145,860 145,340" fill="#0E1828"/>
+  <polygon points="600,130 1018,362 1018,838 600,1070 182,838 182,362" fill="none" stroke="#60A5FA" stroke-width="10"/>
+  <text x="600" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700" fill="#60A5FA" letter-spacing="6">THE EXCLUSION</text>
+  <text x="600" y="455" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="88" font-weight="800" fill="#FFFFFF">CONTRACT</text>
+  <rect x="290" y="520" width="620" height="90" rx="45" fill="#10B981"/>
+  <text x="600" y="582" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="800" fill="#06281E">ZERO DUPLICATES</text>
+  <text x="600" y="720" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="38" fill="#E8EEF8">Never recommended twice.</text>
+  <text x="600" y="885" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="68" font-weight="800" fill="#FFFFFF" letter-spacing="-2">appliedly</text>
+</svg>

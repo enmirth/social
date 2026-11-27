@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A1220"/>
+      <stop offset="100%" stop-color="#172A46"/>
+    </linearGradient>
+  </defs>
+  <!-- White die-cut outer border -->
+  <circle cx="600" cy="600" r="540" fill="#FFFFFF"/>
+  <circle cx="600" cy="600" r="500" fill="url(#bg1)"/>
+  <circle cx="600" cy="600" r="458" fill="none" stroke="#60A5FA" stroke-width="10" stroke-dasharray="18 12"/>
+  <text x="600" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" fill="#60A5FA" letter-spacing="10">OPEN APERTURE</text>
+  <text x="600" y="615" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="148" font-weight="800" fill="#FFFFFF" letter-spacing="-4">appliedly</text>
+  <rect x="330" y="690" width="540" height="72" rx="36" fill="#2563EB"/>
+  <text x="600" y="740" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="700" fill="#FFFFFF" letter-spacing="3">LAND THE RIGHT ROLE</text>
+  <text x="600" y="880" text-anchor="middle" font-family="Consolas, monospace" font-size="34" fill="#9AADC4">appliedly.com</text>
+</svg>
