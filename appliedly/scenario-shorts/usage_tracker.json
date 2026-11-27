@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-28",
+  "gemini-omni-1.2-flash": {
+    "daily_used": 25,
+    "daily_limit": 40,
+    "rpm_limit": 8
+  },
+  "gemini-3.8-flash-tts": {
+    "daily_used": 10
+  }
+}
